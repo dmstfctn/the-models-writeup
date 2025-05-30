@@ -1,0 +1,16 @@
+import Fig from '@/components/Fig.js'
+
+<Fig
+    src="output-stage.jpg"
+    width={1909}
+    height={889}
+    caption={`Most elements visible on stage, such as theatrical silhuoettes, masks and props are drawn by hand, then digitised, 3D modelled and collected inside Unreal Engine.`}
+/>
+
+The stage set in the simulation file is set up to both appear and function like one. Its architecture is an experiment in using the affordances of a game engine, with its collision and physics functions to produce real-time animation that is knowable and predictable enough to be used in an unsupervised installation, but with enough variance and character to feel like the improvisational theatre it represents.
+
+There are on-stage and back-stage areas defined by collision volumes, with masks set up to behave differently depending on whether they’re visible, and target points for different stage positions. Rather than spawning items on stage, or having set animations, each scene is constructed by [the director](#content-the-director) moving between regions, picking up and placing objects and masks on stage. This means timing of actions is not definitive, influenced by distance and collision between elements. 
+
+The simulation features systems that mimic theatrical stage devices, such as rotating spheres for lights, drawn curtains and moving backdrops. The latter have a significant impact on the visual feel of a scene, both because of the high proportion of the view they take up and because they set the lighting. Each backdrop is sorted into one of 7 categories including nighttime, festive, urban, natural, and interior, and this is used to trigger a different form of lighting and a different looping musical soundscape. 
+
+A central BaseSystem governs simulation states (including Construct, PlayBack, Conclude), coordinates subsystems, syncs with a server, and communicates with audience phones. A PlaybackSystem loads AI-generated scripts, guides the director’s setup, and feeds masks lines during each scene, controlling the movement of each masks’ multiple mouths. Different actions - turn, tumble and spin - are potentially triggered when a mask speaks a line.

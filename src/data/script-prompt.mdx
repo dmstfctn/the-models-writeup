@@ -1,0 +1,57 @@
+import Fig from "@/components/Fig.js"
+
+## Script Prompt
+
+The first step in generating a scene is to generate a script. Through prompt engineering, we developed a modular prompting system that combines the descriptions of masks, props and backdrops, as well as constrains around the desired output. We then sent the prompt to a system of models downloaded and running locally on the Leonardo Supercomputer. 
+
+The first model is the 72billion parameter, instruction-tuned version of Qwen 2.5 and we run the prompting via Python using the Hugging Face [transformers](https://huggingface.co/docs/transformers/main/en/index) library which allows us to pass both a system prompt and a user prompt.
+
+### **System prompt**
+
+The system prompt is the foundational set of instructions to the LLM and we use it to set up the role that the LLM will play by providing the characterisation of a script writer:
+
+```
+You are an avant-garde and entertaining Commedia dell'Arte writer. You specialise in short improvised scenes between two masks discussing a controversial setting and object.
+```
+
+As well as to provide compositional and stylistic rules that both counter the (instruct-tuned) model’s tendency to be overly verbose and structure the output in a way that is parsable by our system:
+
+```
+Do not recapitulate settings at the beginning of your output, and do not write things like 'Here is the Commedia dell'Arte scene requested:' 
+```
+
+```
+Vary the length of the lines, sometimes a word or two, sometimes a sentence.
+```
+
+### **Modular User Prompt**
+
+The user prompt is constructed from a modular template that takes each element of the scene (masks, prop, setting) and wraps it in instructional language to trigger the LLM to produce a script-like output rather than something else. It also further adds control to the way these bits of information may return or be used in the script:
+
+```
+Keep the masks’ characterisation throughout the scene, until the last line, maintaining it in interactions with the scene, objects and masks
+```
+
+<Fig
+  src="script-diagram.png"
+  width={1855}
+  height={2000}
+>
+  A diagram visualising the structure and text blocks of a possible prompt (out of 26,880 combinations)
+</Fig>
+
+### Example Output
+
+```markdown
+**Title: The Enchanted Apple**
+
+**Arlecchino:** (peering into the darkness) Ah, Balanzone, what a wondrous night! The moon casts its silvery glow upon these ancient stones.
+
+**Balanzone:** (squinting) Indeed, Arlecchino, it’s a night fit for a king! Or perhaps a queen, if you prefer. (chuckles) But I suspect it’s more fitting for a scholar such as myself.
+
+**Arlecchino:** (nodding eagerly) Oh, most certainly, Balanzone! A scholar of great repute, no doubt. What do you make of this cavern's reflections? They seem almost... mystical.
+
+**Balanzone:** (puffing out his chest) Mystical, you say? Why, I believe we stand in the presence of a portal to another realm! (pauses) Or perhaps it’s just a very wet cave. But let’s not quibble over details.
+
+...
+```

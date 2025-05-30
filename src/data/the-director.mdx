@@ -1,0 +1,23 @@
+import Fig from '@/components/Fig.js';
+import Columns from '@/components/Columns.js'
+
+## The Director
+The diagetic embodiment of the system is the Director, a flying hand that places masks and props on stage and summarises their characteristics before the improvisation starts. This is instrumental to informing the audience of the scene’s context, so that they be better equipped to understand the scene - a practice common in Commedia dell’Arte, especially with scenes delivered in an imitational language used by Commedia artist called Grammelot:
+
+> *First and foremost, it is important to inform the audience of the subject that will be discussed, as I have just done, then it is vital to elaborate, through sounds and gestures, the key elements that characterise the masks.
+—*Dario Fo, page 57, *Tricks of the Trade*
+<Columns>
+    <Fig
+        src="director-sketch.jpg"
+        width={2000}
+        height={824}
+    />
+    <Fig
+        src="director-system.jpg"
+        width={2000}
+        height={824}
+    />
+</Columns>
+In early prototypes where our AI generation system ran in real-time in response to the audience’s selection, this initial instructing segment also served the purpose to ‘gain time’ while the models generated text, voice and transcript for the scene. However, due to security restrictions around the ability to access Leonardo’s data in real-time over the open internet, a scheduled batch-generation process was prioritised, removing the need to wait for generation prior to each scene.
+
+The Director is also heard occasionally shouting stage directions and seen cutting a scene short in response to negative audience feedback.

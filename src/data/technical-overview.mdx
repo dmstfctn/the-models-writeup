@@ -1,0 +1,7 @@
+## Technical Overview
+
+The textual prompts derived from combining masks, props , settings and languages in every possible permutation result in 26,880 unique scenes, each with AI-generated dialogues, including speech bubbles and translated subtitles. This generation was run as scheduled batch processes using the [Leonardo supercomputer](https://www.notion.so/Write-Up-1f9ae824ec58801d9aa4ee1a40ddbf48?pvs=21). 
+
+For each script a [modular prompt](#content-script-prompt) is assembled which generates the script output as text. This is parsed using a Python script into a JSON file and sent to: a text-to-audio model to generate voice (as audio files); an audio-to-text model to transcribe what is being actually said out loud; and an LLM to translate transcription into subtitles - resulting in 26,880 unique folders with text and audio files.
+
+When the installation is presented, the audience uses a [web interface](#interface-and-server) on their phones to select elements of a scene, resulting in 1 of 26,880 possible combinations. The right folder is retrieved in real-time by a [system](#the-output-system) built in Unreal Engine, ensuring that the correct masks, prop, and backdrop are made visible on the virtual stage, that a title is shown, and that masks receive their associated lines. The same system also facilitates audience feedback in the form of throwing flowers and coins if a scene is liked, or tomatoes and eggs if disliked, which may lead to an abrupt ending of the scene.
