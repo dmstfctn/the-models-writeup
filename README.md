@@ -1,9 +1,4 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
+## Dev server
 ```bash
 npm run dev
 # or
@@ -16,21 +11,21 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+This project is based on [Next.js](https://nextjs.org), bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Updating Content
+The content is in sections, found in `src/data/*.mdx` files. Each of these is imported and wrapped in `src/app/sections.js` and then imported and arranged in `src/app/page.js`.
 
-## Learn More
+Because they are `.mdx` files, they can import and use React components.
 
-To learn more about Next.js, take a look at the following resources:
+## Custom Components
+Custom components are found in `src/components` and include:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Fig
+Markup for an image, using the Next.js `Image` Component and adding text as figcaption with two styling options.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Columns
+Simple wrapper that lays out children as columns. It's fairly stupid and just uses flexbox so does not constrain column size or count. Mostly used to put 2 fig side by side. 
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Video Player
+Wraps `ReactPlayer`, mostly to embed vimeo.
