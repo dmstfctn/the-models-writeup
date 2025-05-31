@@ -147,23 +147,26 @@
 
   .tmw-sidebar{
     position: fixed;        
+    z-index: 5;
+    width: 100%;
     max-width: var(--content-width);
     pointer-events: none;
-    right: 0;
+    right: calc( var(--content-width) * -1);
     top: 0;
     opacity: 0;
     background-color: var(--background-sidebar);
     padding: calc( var(--spacing) * 6 );
-    transform: translateX(100%);
-    transition: opacity .1s .3s linear, transform .3s ease-in-out;   
+    /* transform: translateX(100%); */
+    transition: opacity .1s .3s linear, right .4s linear;   
     height: 100%;
     overflow: auto;
   }
     .tmw-sidebar__visible{
       pointer-events: all;
       opacity: 1;
-      transform: translateX(0);
-       transition: opacity .1s linear, transform .3s ease-in-out;
+      /* transform: translateX(0); */
+      right: 0;
+       transition: opacity .1s linear, right .4s linear;
     }
     .tmw-sidebar-link{
       color: blue;

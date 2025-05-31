@@ -23,7 +23,8 @@ export default function Fig({
                 width={width}
                 height={height}
                 className={ `${(children) ? 'mb-1' : '' }` }
-                onClick={() => {
+                onClick={(e) => {
+                    e.stopPropagation();
                     setZoom( !zoom );
                 }}
             />
@@ -36,7 +37,8 @@ export default function Fig({
         </figure>
         {(zoom) ? <div 
             className="tmw-fig-zoom"  
-            onClick={() => {
+            onClick={(e) => {
+                e.stopPropagation();
                 setZoom( false );
             }}
         >
