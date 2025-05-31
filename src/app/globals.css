@@ -3,7 +3,7 @@
 :root {
   --background: #fafafa;
   --foreground: #171717;
-  --background-sidebar: yellow;
+  --background-sidebar: #cfcfcf;
   --base-font-size: 14.4;
   --base-font-size-px: var(--base-font-size)px;
   --content-width: 38rem;
@@ -170,8 +170,11 @@ h6 + h6 {
       position: relative;
       cursor: w-resize;
     }
+      .tmw-sidebar-link__active{
+        cursor: e-resize;
+      }
       .tmw-sidebar .tmw-sidebar-link{
-        cursor: n-resizeee;
+        cursor: n-resize;
       }
     .tmw-sidebar-content{
       position: fixed;      

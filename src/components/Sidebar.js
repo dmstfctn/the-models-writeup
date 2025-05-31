@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useSidebar } from "./SidebarContext";
 
 export default function Sidebar(){
@@ -20,11 +21,11 @@ export function SidebarLink({
     content=<></>
 }){
     const {sidebarState, setSidebarState} = useSidebar();
+    const [linkActive, setLinkActive] = useState( false );
     const onTrigger = ( e ) => {
         e.stopPropagation();
-        console.log('onTrigger')
         if( sidebarState.visible && sidebarState.content === content ) return;
-        console.log('change sidebar state, content = ', content );
+        setLinkActive( true );
         setSidebarState({ 
             ...sidebarState,
             content,
@@ -32,7 +33,7 @@ export function SidebarLink({
         });
     }
     const onClear = () => {
-        console.log('onClear')
+        setLinkActive( false );
         setSidebarState({ 
             ...sidebarState,            
             visible: false
@@ -40,8 +41,8 @@ export function SidebarLink({
     }
     return <>
         <span 
-            className="tmw-sidebar-link" 
-            onClick={ (sidebarState.visible && sidebarState.content === content) ? onClear : onTrigger }
+            className={`tmw-sidebar-link${linkActive ? ' tmw-sidebar-link__active' : ''}`}
+            onClick={ ( linkActive || sidebarState.visible && sidebarState.content === content) ? onClear : onTrigger }
             // onMouseMove={ onTrigger }
             // onMouseOut={ onClear }
         >
