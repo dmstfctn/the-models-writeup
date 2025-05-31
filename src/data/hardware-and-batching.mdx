@@ -1,7 +1,7 @@
 import Fig from '@/components/Fig.js'
 
 ## AI Hardware
-To produce the 26,880 dialogues using generative AI, we had access to the Leonardo Supercomputer in winter 2024, as part of the EU Digital Deal residency hosted by Sineglossa. We had 150,000 hours of high-power compute budget and the support of engineers from Cineca, the body overseeing the computer. 
+To produce the [26,880 dialogues](#content-technical-overview) using generative AI, we had access to the Leonardo Supercomputer in winter 2024, as part of the EU Digital Deal residency hosted by Sineglossa. We had 150,000 hours of high-power compute budget and the support of engineers from Cineca, the body overseeing the computer. 
 
 Leonardo’s main GPU and CPU areas are not exposed to the internet, and so could not be used real-time generation. This meant that all permutations of the script had to be generated in advance of showing the installation through batch processing, using local open-source models.
 
@@ -11,8 +11,8 @@ Leonardo’s main GPU and CPU areas are not exposed to the internet, and so coul
     height={1568}
 />
 
-Leonardo operates through batch jobs which are split across nodes via a scheduler, with smaller jobs prioritised. As such the AI generation process was split into four stages: script writing and parsing, voice generation, voice transcription and timestamping, and translation. The generation process for all 26,880 scripts used up to 210 nodes of the Supercomputer, each equipped with 4x A100 NVIDIA GPUs, and took the equivalent of ~8 days of continuous compute time to complete. The generated scripts and associated audio files, totalling 400GB, were downloaded to an external HD in a format that can be referenced by the Unreal Engine simulation.
+Leonardo operates through batch jobs which are split across nodes via a scheduler, with smaller jobs prioritised. As such the AI generation process was split into four stages: [script writing and parsing](#content-script-promptt), [voice generation, voice transcription and timestamping, and translation](#content-voice-and-speech). The generation process for all 26,880 scripts used up to 210 nodes of the Supercomputer, each equipped with 4x A100 NVIDIA GPUs, and took the equivalent of ~8 days of continuous compute time to complete. The generated scripts and associated audio files, totalling 400GB, were downloaded to an external HD in a custom format that can be referenced by the [Unreal Engine simulation](#content-the-output-system).
 
 ## Simulation Hardware
 
-The simulation builds to an executable file that runs on any Windows computer with a relatively up to date NVIDIA graphics card (RTX 3060+) and an internet connection. The computer is attached to the external HD containing all the script data, and a sound and display system. The simulation ratio can be adapted between 2:1 and 1:1.
+The [simulation](#content-the-output-system) builds to an executable file that runs on any Windows computer with a relatively up to date NVIDIA graphics card (RTX 3060+) and an internet connection. The computer is attached to the external HD containing all the script data, and a sound and display system. The simulation ratio can be adapted between 2:1 and 1:1.

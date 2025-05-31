@@ -1,8 +1,10 @@
 import Fig from '@/components/Fig.js'
+import {SectionTheDirector} from '@/app/sections.js'
+import {SidebarLink} from '@/components/Sidebar.js'
 
 ## Interface
 
-Audiences can use their phone to select parameters for each scene via a web interface. Up to three people can choose at once and if there are more people present and connected then they get held in a queue until it’s their turn. Whilst the scene is unfolding, connected audience members can provide feedback to the characters by throwing items on stage - flowers and coins if they feel positively, eggs and tomatoes if not.
+Audiences can use their phone to select parameters for each scene via a web interface. Up to three people can choose at once and if there are more people present and connected then they get held in a queue until it’s their turn. Whilst [the scene](#content-a-scene) is unfolding, connected audience members can provide feedback to the characters by throwing items on stage - flowers and coins if they feel positively, eggs and tomatoes if not.
 
 <Fig
     src="interface-phone.jpg"
@@ -10,7 +12,7 @@ Audiences can use their phone to select parameters for each scene via a web inte
     height={1272}
 />
 
-The interface also provides an overview of the installation and interaction, meaning that this does not have to happen within the simulation itself. The link between the two is the director who breaks the fourth wall to encourage interaction during the scene.
+The interface also provides an overview of the installation and interaction, meaning that this does not have to happen within the simulation itself. The link between the two is <SidebarLink content={<SectionTheDirector/>}>the director</SidebarLink> who breaks the fourth wall to encourage interaction during the scene.
 
 ## Server
 
