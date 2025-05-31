@@ -12,7 +12,10 @@ export default function Sidebar(){
             });
         }}
     >
-        {sidebarState.content}
+        <div className="tmw-sidebar-close">&times;</div>
+        <div>
+            {sidebarState.content}
+        </div>
     </div>
 }
 

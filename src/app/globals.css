@@ -148,7 +148,7 @@
   .tmw-sidebar{
     position: fixed;        
     z-index: 5;
-    width: 100%;
+    width: 90%;
     max-width: var(--content-width);
     pointer-events: none;
     right: calc( var(--content-width) * -1);
@@ -161,6 +161,14 @@
     height: 100%;
     overflow: auto;
   }
+    .tmw-sidebar-close{
+      position: absolute;
+      right: calc( var(--spacing) * 3 );
+      top: calc( var(--spacing) * 3 );
+      font-size: 2rem;
+      line-height: 0.9;
+      cursor: pointer;
+    }
     .tmw-sidebar__visible{
       pointer-events: all;
       opacity: 1;
