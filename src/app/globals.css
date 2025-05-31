@@ -32,43 +32,43 @@
     margin-top: calc( var(--spacing) * 6); 
   }
     h1 + h1,
-h1 + h2,
-h1 + h3,
-h1 + h4,
-h1 + h5,
-h1 + h6,
-h2 + h1,
-h2 + h2,
-h2 + h3,
-h2 + h4,
-h2 + h5,
-h2 + h6,
-h3 + h1,
-h3 + h2,
-h3 + h3,
-h3 + h4,
-h3 + h5,
-h3 + h6,
-h4 + h1,
-h4 + h2,
-h4 + h3,
-h4 + h4,
-h4 + h5,
-h4 + h6,
-h5 + h1,
-h5 + h2,
-h5 + h3,
-h5 + h4,
-h5 + h5,
-h5 + h6,
-h6 + h1,
-h6 + h2,
-h6 + h3,
-h6 + h4,
-h6 + h5,
-h6 + h6 {
-  margin-top: 0;
-}
+    h1 + h2,
+    h1 + h3,
+    h1 + h4,
+    h1 + h5,
+    h1 + h6,
+    h2 + h1,
+    h2 + h2,
+    h2 + h3,
+    h2 + h4,
+    h2 + h5,
+    h2 + h6,
+    h3 + h1,
+    h3 + h2,
+    h3 + h3,
+    h3 + h4,
+    h3 + h5,
+    h3 + h6,
+    h4 + h1,
+    h4 + h2,
+    h4 + h3,
+    h4 + h4,
+    h4 + h5,
+    h4 + h6,
+    h5 + h1,
+    h5 + h2,
+    h5 + h3,
+    h5 + h4,
+    h5 + h5,
+    h5 + h6,
+    h6 + h1,
+    h6 + h2,
+    h6 + h3,
+    h6 + h4,
+    h6 + h5,
+    h6 + h6 {
+      margin-top: 0;
+    }
 
   h1{
     font-size: 1.6rem;
@@ -80,7 +80,7 @@ h6 + h6 {
     font-size: 1.1rem;
   }
 
-  p{
+  p, pre, blockquote{
     margin-bottom: calc( 2 * var(--spacing));
   }
 
@@ -206,8 +206,22 @@ h6 + h6 {
       }
     
     .tmw-fig{
-
+      margin-bottom: calc( var(--spacing) * 1 );
     }
+      h1+.tmw-fig,
+      h2+.tmw-fig,
+      h3+.tmw-fig,
+      h4+.tmw-fig,
+      h5+.tmw-fig,
+      h6+.tmw-fig,
+      h1+.tmw-cols,
+      h2+.tmw-cols,
+      h3+.tmw-cols,
+      h4+.tmw-cols,
+      h5+.tmw-cols,
+      h6+.tmw-cols{
+        margin-top: calc( var(--spacing) * 1 );
+      }
       .tmw-fig-zoom{
         position: fixed;
         top: 0;
