@@ -1,4 +1,6 @@
+import {useState} from 'react'
 import Image from 'next/image'
+
  
 export default function Fig({
     src='', 
@@ -9,6 +11,7 @@ export default function Fig({
     caption='',
     children
 }){
+    const [zoom,setZoom] = useState(false);
     return <div 
         className='tmw-fig basis-1/2'
     >
@@ -20,13 +23,29 @@ export default function Fig({
                 width={width}
                 height={height}
                 className={ `${(children) ? 'mb-1' : '' }` }
+                onClick={() => {
+                    setZoom( !zoom );
+                }}
             />
-            {(children) ? <figcaption>
-                {children}
-            </figcaption> : ''}
             {(caption) ?  <figcaption className="text-xs italic">
                 {caption}
             </figcaption> : ''}
+            {(children) ? <figcaption>
+                {children}
+            </figcaption> : ''}
         </figure>
+        {(zoom) ? <div 
+            className="tmw-fig-zoom"  
+            onClick={() => {
+                setZoom( false );
+            }}
+        >
+            <Image
+                src={`/${src}`}
+                alt={alt}
+                width={width}
+                height={height}       
+            />
+        </div> : '' }
     </div>
 }
