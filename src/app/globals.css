@@ -247,6 +247,7 @@
     
     .tmw-fig{
       margin-bottom: calc( var(--spacing) * 1 );
+      cursor: zoom-in;
     }
       h1+.tmw-fig,
       h2+.tmw-fig,
@@ -272,6 +273,7 @@
         box-sizing: border-box;
         padding: calc( var(--spacing) * 6 );
         background-color: var(--background);
+        cursor: zoom-out;
       }
         .tmw-fig-zoom img{
           width: 100%;
