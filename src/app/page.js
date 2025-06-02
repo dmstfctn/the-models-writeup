@@ -42,11 +42,15 @@ export default function Home() {
                     // height={1063}
                     fill={true}
                 />
+                <div className='tmw-title'>
+                    <h1><i>The Models</i> (2025)</h1>
+                    <h2>dmstfctn</h2>
+                </div>  
             </header>
             <div className="tmw-body">        
                 <SidebarProvider value={{ sidebarState, setSidebarState }}>
                     <section className="tmw-main">                    
-                        <h1 className='tmw-title'><i>The Models</i> (2025), dmstfctn</h1>           
+                                 
                         <SectionProjectOverview />
                         <TmwSection>
                             <VideoPlayer 

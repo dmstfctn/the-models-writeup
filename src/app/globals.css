@@ -4,8 +4,7 @@
   --background: #fafafa;
   --foreground: #171717;
   --background-sidebar: #cfcfcf;
-  --base-font-size: 14.4;
-  --base-font-size-px: var(--base-font-size)px;
+  --base-font-size-px: 15px;
   --content-width: 38rem;
 }
 
@@ -77,7 +76,7 @@
     font-size: 1.3rem;
   }
   h3{
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   p, pre, blockquote{
@@ -116,21 +115,48 @@
   }  
 }
 
-
 .tmw-header{ 
   width: 100vw;
-  height: 100vh;
-  position: fixed;
-  z-index: -1;
+  height: 56vw;
+  max-height: 86vh;
+  position: relative;
 }
+  /* @media (min-aspect-ratio: 16/9) {
+    .tmw-header{
+      width: 100vw;
+      height: 90vh;
+    }
+  } */
+/* .tmw-header{ 
+  width: 100vw;
+  height: 90vh;
+} */
+  .tmw-header img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
   .tmw-title{
     margin-top: 0;
+    position: absolute;
+    bottom: 2rem;
   }
+    .tmw-title h1,
+    .tmw-title h2{
+      font-size: 2rem;
+      background-color: var(--background);
+      line-height: 1;
+      margin-bottom:calc(var(--spacing) * 2);
+      padding: calc(var(--spacing) * 2);
+      padding-left: calc( 6 * var(--spacing) );
+      display: table;
+    } 
+      .tmw-title h2{
+        font-size: 1.6rem;
+      }
 .tmw-body{
   background-color: var(--background);
-  position: relative;
-  top: 90vh;
-  top: calc( 100vh - 3.5rem);
+  position: relative; 
   padding-top: calc( 3 * var(--spacing) );
   padding-bottom: 33vh;
   position: relative;
