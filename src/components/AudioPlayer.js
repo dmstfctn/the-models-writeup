@@ -1,7 +1,5 @@
 "use client";
 import {useState, useRef} from "react";
-import BtnPlay from '../svg/btn-play.svg';
-import BtnStop from '../svg/btn-stop.svg';
 
 const AudioPlayer = ({url='', title=false}) => {
   const [isPlaying, setIsPlaying] = useState(false);
