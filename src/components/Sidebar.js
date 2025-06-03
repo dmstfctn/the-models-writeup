@@ -5,12 +5,12 @@ export default function Sidebar(){
     const {sidebarState, setSidebarState} = useSidebar();
     return <div 
         className={`tmw-sidebar${(sidebarState.visible) ? ' tmw-sidebar__visible' : ''}`}
-        onClick={() => {
-            setSidebarState({
-                ...sidebarState,
-                visible: false
-            });
-        }}
+        // onClick={() => {
+        //     setSidebarState({
+        //         ...sidebarState,
+        //         visible: false
+        //     });
+        // }}
     >        
         <div>
             {sidebarState.content}
