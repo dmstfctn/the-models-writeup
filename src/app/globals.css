@@ -4,17 +4,20 @@
   --background: #fafafa;
   --foreground: #171717;
   --foreground-sidebar: #cfcfcf;
-  --background-sidebar: #0000FF;
+  --background-sidebar: var(--foreground);
   --base-font-size-px: 15px;
   --content-width: 38rem;
   --max-header-image-height: 80vh;
-  --sidebar-tab-width: 4rem;
+  --sidebar-tab-width: 3rem;
   --sidebar-width: calc( 100vw - var(--sidebar-tab-width) - 1rem );
-  --sidebar-edge: (var( --spacing ) * 4);
+  --sidebar-edge: calc( var( --spacing ) * 1 );
 }
 @media (min-width: 1024px){
   :root {
     --base-font-size-px: 17px;
+     --sidebar-tab-width: 4rem;
+    --sidebar-edge: (var( --spacing ) * 4 );
+    --sidebar-width: calc( 100vw - var(--sidebar-tab-width) - 1rem );
   }
 }
 
@@ -144,7 +147,7 @@
 
   a{
     text-decoration: underline;
-    text-decoration-color: blue;
+    text-decoration-color: var(--foreground);
 
   }
   a:hover{
@@ -301,6 +304,8 @@
     .tmw-sidebar-link{
       color: var(--background-sidebar);   
       cursor: w-resize;
+      font-weight: bold;
+      text-decoration: underline;
     }
       
       .tmw-sidebar-link__active{
@@ -336,22 +341,24 @@
             .tmw-sidebar-link:hover .tmw-sidebar-link--tab{
               background-color: var(--background-sidebar);
               color: var(--foreground-sidebar);
-              width: 5rem;
+               width: calc( var(--sidebar-tab-width) * 1.33 );
             }  
               .tmw-sidebar-link__active:hover .tmw-sidebar-link--tab{
-                width: 4rem;
+                 width: var(--sidebar-tab-width);
               }    
 
       .tmw-sidebar-link--tab{
+        font-weight: normal;
+        font-size: 0.88rem;
         position: absolute;
         right: 0;
-        width: 4rem;
+        width: var(--sidebar-tab-width);
         background-color: var(--background-sidebar);
         color: var(--foreground-sidebar);
-        height: 2.4rem;
-        margin-top: -0.4rem;
-        line-height: 2.4rem;
-        padding-left: 0.8rem;
+        height: 2rem;
+        margin-top: -0.35rem;
+        line-height: 2rem;
+        padding-left: 0.6rem;
         transition: right .4s linear, width .1s ease-out; 
         z-index: 10;
       }        
