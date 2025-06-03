@@ -1,10 +1,12 @@
 import Fig from "@/components/Fig.js"
+import {SidebarLink} from '@/components/Sidebar.js'
+import {SectionPromptTactics} from '@/app/sections.js'
 
 ## Script Prompt
 
-The first step in generating a scene is to generate a script. Through prompt engineering, we developed a modular prompting system that combines the descriptions of masks, props and backdrops, as well as constrains around the desired output. We then sent the prompt to a system of models downloaded and running locally on the [Leonardo Supercomputer](#content-hardware-and-batching). 
+The first step in generating a scene is to generate a script. Through <SidebarLink content={<SectionPromptTactics />}>prompt engineering</SidebarLink>, we developed a modular prompting system that combines the descriptions of masks, props and backdrops, as well as constrains around the desired output. We then sent the prompt to a system of models downloaded and running locally on the [Leonardo Supercomputer](#content-hardware-and-batching). 
 
-The first model is the 72billion parameter, instruction-tuned version of Qwen 2.5 and we run the prompting via Python using the Hugging Face [transformers](https://huggingface.co/docs/transformers/main/en/index) library which allows us to pass both a system prompt and a user prompt.
+The first model is the 72 billion parameter, instruction-tuned version of Qwen 2.5 and we run the prompting via Python using the Hugging Face [transformers](https://huggingface.co/docs/transformers/main/en/index) library which allows us to pass both a system prompt and a user prompt.
 
 ### **System prompt**
 
