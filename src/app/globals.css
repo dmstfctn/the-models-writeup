@@ -8,6 +8,7 @@
   --content-width: 38rem;
   --max-header-image-height: 80vh;
   --sidebar-width: 100vw - 5rem;
+  --sidebar-edge: (var( --spacing ) * 4);
 }
 @media (min-width: 1024px){
   :root {
@@ -273,7 +274,7 @@
     z-index: 5;
     width: min( var(--sidebar-width), var(--content-width));
     pointer-events: none;
-    right: calc( -1 * min( var(--sidebar-width), var(--content-width)) + (var( --spacing ) * 6) );
+    right: calc( -1 * min( var(--sidebar-width), var(--content-width)) + var(--sidebar-edge) );
     top: 0;    
     background-color: var(--background-sidebar);
     padding: calc( var(--spacing) * 6 );
