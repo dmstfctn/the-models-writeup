@@ -31,7 +31,7 @@ export default function Home() {
     });  
 
     return (
-        <article>
+        <article className={`tmw-root${sidebarState.visible ? ' tmw-root__static' : '' }`}>
             <header className="tmw-header">                   
                 <div className='tmw-header-image-wrap'>
                     <Image

@@ -11,8 +11,7 @@ export default function Sidebar(){
                 visible: false
             });
         }}
-    >
-        <div className="tmw-sidebar-close">&times;</div>
+    >        
         <div>
             {sidebarState.content}
         </div>
@@ -48,8 +47,10 @@ export function SidebarLink({
             onClick={ ( linkActive || sidebarState.visible && sidebarState.content === content) ? onClear : onTrigger }
             // onMouseMove={ onTrigger }
             // onMouseOut={ onClear }
-        >
+        >        
             {children}           
+            <span className={`tmw-sidebar-link--annotation`}>+</span>
+            <span className={`tmw-sidebar-link--tab`}>{linkActive ? 'close' : 'more'}</span>
         </span>       
     </>
 }
