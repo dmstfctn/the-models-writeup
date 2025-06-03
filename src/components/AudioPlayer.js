@@ -5,8 +5,6 @@ const AudioPlayer = ({url='', title=false}) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef();
 
-  console.log(BtnPlay)
-
   return (
     <div className="tmw-media tmw-media__audio">      
       <audio ref={audioRef} src={url} controls={false}/>
