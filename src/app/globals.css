@@ -193,20 +193,29 @@
       margin:  calc(var(--spacing) * 5) auto calc(var(--spacing) * 4);   
       padding: 0 calc(6 * var(--spacing));
     }   
+        .tmw-title h1,
+        .tmw-title h2{
+          margin-top: 0;
+          margin-bottom: 0;
+          line-height: 1.1;
+        }        
       @media (min-width: 38rem){
+        .tmw-main{
+          padding-right: calc(6 * var(--spacing)) !important;
+        }
         .tmw-title{
           text-align: center;
         }
-      }
-      .tmw-title h1,
-      .tmw-title h2{
-        margin-top: 0;
-        display: inline-block;            
-      }
-        .tmw-title h1::after{
-          content: ', ';
+        .tmw-title h1,
+        .tmw-title h2{
+          display: inline-block;  
         }
-
+        /* .tmw-title h1::after{
+          content: ', ';
+          white-space: pre;
+        } */
+      }
+     
   @media (min-width: 1024px) and (max-width: 1400px){
     .tmw-header{ 
       max-width: 100%;

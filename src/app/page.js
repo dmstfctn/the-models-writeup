@@ -46,7 +46,7 @@ export default function Home() {
                 </div>
                 <div className='tmw-title'>
                     <h1><i>The Models</i> (2025)</h1>
-                    <h2>dmstfctn</h2>
+                    {/* <h2>dmstfctn</h2> */}
                 </div>
             </header>
             <div className="tmw-body">        
