@@ -155,7 +155,7 @@
   a:hover{
     color: var(--background);
     overflow: hidden;
-    background-color: blue;
+    background-color: var(--foreground);
   }  
 }
 
