@@ -4,7 +4,7 @@ import { useSidebar } from "./SidebarContext";
 export default function Sidebar(){
     const {sidebarState, setSidebarState} = useSidebar();
     return <div 
-        className={`tmw-sidebar${(sidebarState.visible) ? ' tmw-sidebar__visible' : ''}`}
+        className={`tmw-sidebar${(sidebarState.visible) ? ' tmw-sidebar__visible' : ''}${(sidebarState.hover) ? ' tmw-sidebar__hover' : ''}`}
         // onClick={() => {
         //     setSidebarState({
         //         ...sidebarState,
@@ -45,11 +45,21 @@ export function SidebarLink({
         <span 
             className={`tmw-sidebar-link${linkActive ? ' tmw-sidebar-link__active' : ''}`}
             onClick={ ( linkActive || sidebarState.visible && sidebarState.content === content) ? onClear : onTrigger }
-            // onMouseMove={ onTrigger }
-            // onMouseOut={ onClear }
+            onMouseOver={ () => {
+                 setSidebarState({ 
+                    ...sidebarState,
+                    hover: true
+                });
+            }}
+            onMouseOut={ () => {
+                 setSidebarState({ 
+                    ...sidebarState,
+                    hover: false
+                });
+            }}
         >        
             {children}           
-            <span className={`tmw-sidebar-link--annotation`}>+</span>
+            {/* <span className={`tmw-sidebar-link--annotation`}>&nbsp;</span> */}
             <span className={`tmw-sidebar-link--tab`}>{linkActive ? 'close' : 'more'}</span>
         </span>       
     </>
