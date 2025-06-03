@@ -1,3 +1,9 @@
+"use client"
+
+import dynamic from 'next/dynamic'
+
+const VideoPlayerNoSSR = dynamic(() => import('../components/VideoPlayer.js'), {ssr: false});
+
 import ContentAScene from "@/data/a-scene.mdx"
 import ContentAiTendencies from "@/data/ai-tendencies.mdx"
 import ContentAiWeirdness from "@/data/ai-weirdness.mdx"
@@ -33,3 +39,10 @@ export const SectionTechnicalOverview   = () => <TmwSection id="content-technica
 export const SectionTheDirector         = () => <TmwSection id="content-the-director"><ContentTheDirector  /></TmwSection>
 export const SectionTheOutputSystem     = () => <TmwSection id="content-the-output-systen"><ContentTheOutputSystem /></TmwSection>
 export const SectionVoiceAndSpeech      = () => <TmwSection id="content-voice-and-speech"><ContentVoiceAndSpeech /></TmwSection>
+export const SectionVideo               = () => <TmwSection>
+                                                    <VideoPlayerNoSSR 
+                                                        url="https://vimeo.com/1061218581"
+                                                        width={1920}
+                                                        height={1408}
+                                                    />
+                                                </TmwSection>

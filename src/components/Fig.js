@@ -1,6 +1,5 @@
-import {useState} from 'react'
+import {useState, useRef, useMemo, useEffect} from 'react'
 import Image from 'next/image'
-
  
 export default function Fig({
     src='', 
@@ -9,25 +8,40 @@ export default function Fig({
     width=0,
     height=0,
     caption='',
+    video=false,
     children
 }){
     const [zoom,setZoom] = useState(false);
-    return <div 
+
+    const img = <Image
+        src={`/${src}`}
+        alt={alt}
+        width={width}
+        height={height}
+        className={ `${(children) ? 'mb-1' : '' }` }
+        onClick={(e) => {
+            e.stopPropagation();
+            setZoom( !zoom );
+        }}
+    />
+    return <div  
         className='tmw-fig basis-1/2'
     >
         {(title) ? <h1>{title}</h1> : ''}
-        <figure>            
-            <Image
-                src={`/${src}`}
-                alt={alt}
-                width={width}
-                height={height}
-                className={ `${(children) ? 'mb-1' : '' }` }
-                onClick={(e) => {
-                    e.stopPropagation();
-                    setZoom( !zoom );
-                }}
-            />
+        <figure>
+            {(video) 
+                ? <video 
+                    loop 
+                    playsInline 
+                    poster={src} 
+                    muted
+                    autoPlay
+                >
+                    <source src={video} type="video/mp4" />
+                    {img}
+                </video> 
+                : img
+            }            
             {(caption) ?  <figcaption className="text-xs italic">
                 {caption}
             </figcaption> : ''}

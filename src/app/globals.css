@@ -6,6 +6,12 @@
   --background-sidebar: #cfcfcf;
   --base-font-size-px: 15px;
   --content-width: 38rem;
+  --max-header-image-height: 86vh;
+}
+@media (min-width: 1024px){
+  :root {
+    --base-font-size-px: 18px;
+  }
 }
 
 @theme inline {
@@ -122,41 +128,54 @@
   width: 100vw;
   height: 56vw;
   max-height: 86vh;
+  max-width: 1200px;
+  margin: 0 auto;
   position: relative;
 }
-  /* @media (min-aspect-ratio: 16/9) {
-    .tmw-header{
-      width: 100vw;
-      height: 90vh;
-    }
-  } */
-/* .tmw-header{ 
-  width: 100vw;
-  height: 90vh;
-} */
+
   .tmw-header img{
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-  .tmw-title{
-    margin-top: 0;
-    position: absolute;
-    bottom: 2rem;
-  }
-    .tmw-title h1,
-    .tmw-title h2{
-      font-size: 2rem;
-      background-color: var(--background);
-      line-height: 1;
-      margin-bottom:calc(var(--spacing) * 2);
-      padding: calc(var(--spacing) * 2);
-      padding-left: calc( 6 * var(--spacing) );
-      display: table;
-    } 
+    .tmw-header-image-wrap{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      max-height: var(--max-header-image-height);
+    }
+    .tmw-title{
+      position: relative;    
+      max-width: var( --content-width );
+      margin: 0 auto;    
+    }   
+      .tmw-title h1,
       .tmw-title h2{
-        font-size: 1.6rem;
+        margin-top: 0;
       }
+
+  @media (min-width: 1024px) and (max-width: 1400px){
+    .tmw-title{
+      margin-top: 0;
+      position: absolute;
+      bottom: 2rem;
+      z-index: 1;
+    }
+      .tmw-title h1,
+      .tmw-title h2{
+        font-size: 2rem;
+        background-color: var(--background);
+        line-height: 1;
+        margin-bottom:calc(var(--spacing) * 2);
+        padding: calc(var(--spacing) * 2);
+        padding-left: calc( 6 * var(--spacing) );
+        display: table;
+      } 
+        .tmw-title h2{
+          font-size: 1.6rem;
+        }
+  }
+
 .tmw-body{
   background-color: var(--background);
   position: relative; 
@@ -168,7 +187,7 @@
   max-width: var( --content-width );
   padding: 0 calc( 6 * var(--spacing) );
   box-sizing: border-box;
-  /* margin: 0 auto; */
+  margin: 0 auto;
 } 
   .tmw-section{
     margin-bottom: calc( 6 * var(--spacing) );

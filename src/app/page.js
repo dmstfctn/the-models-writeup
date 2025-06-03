@@ -1,12 +1,8 @@
 "use client"
 
 import { useState  } from 'react';
-
 import Sidebar from '@/components/Sidebar.js';
-
 import Image from 'next/image';
-
-import VideoPlayer from '@/components/VideoPlayer.js';
 
 import {
     TmwSection,
@@ -22,7 +18,8 @@ import {
     SectionTechnicalOverview,
     SectionTheDirector,
     SectionTheOutputSystem,
-    SectionVoiceAndSpeech
+    SectionVoiceAndSpeech,
+    SectionVideo
 } from '@/app/sections.js';
 import { SidebarProvider } from '@/components/SidebarContext.js';
 
@@ -35,30 +32,28 @@ export default function Home() {
 
     return (
         <article>
-            <header className="tmw-header">            
-                <Image
-                    src="/overview-installation.jpg"
-                    // width={1599}
-                    // height={1063}
-                    fill={true}
-                />
-                <div className='tmw-title'>
+            <header className="tmw-header">   
+                 <div className='tmw-title'>
                     <h1><i>The Models</i> (2025)</h1>
                     <h2>dmstfctn</h2>
-                </div>  
+                </div>
+                <div className='tmw-header-image-wrap'>
+                    <Image
+                        src="/overview-installation.jpg"
+                        // width={1599}
+                        // height={1063}
+                        fill={true}
+                        priority
+                        alt="The Models on a large LED screen in front of an audience."
+                    />
+                </div>
             </header>
             <div className="tmw-body">        
                 <SidebarProvider value={{ sidebarState, setSidebarState }}>
                     <section className="tmw-main">                    
                                  
                         <SectionProjectOverview />
-                        <TmwSection>
-                            <VideoPlayer 
-                                url="https://vimeo.com/1061218581"
-                                width={1920}
-                                height={1408}
-                            />
-                        </TmwSection>
+                        <SectionVideo />
                         <SectionAiTendencies />
                         {/* <SectionRolePlay /> */}
                         <SectionAScene />
