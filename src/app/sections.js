@@ -17,6 +17,7 @@ import ContentTechnicalOverview from "@/data/technical-overview.mdx"
 import ContentTheDirector from "@/data/the-director.mdx"
 import ContentTheOutputSystem from "@/data/the-output-system.mdx"
 import ContentVoiceAndSpeech from "@/data/voice-and-speech.mdx"
+import ContentCredits from "@/data/credits.mdx"
 
 export const TmwSection = ({children, id=""}) => {
     return (
@@ -39,6 +40,7 @@ export const SectionTechnicalOverview   = () => <TmwSection id="content-technica
 export const SectionTheDirector         = () => <TmwSection id="content-the-director"><ContentTheDirector  /></TmwSection>
 export const SectionTheOutputSystem     = () => <TmwSection id="content-the-output-systen"><ContentTheOutputSystem /></TmwSection>
 export const SectionVoiceAndSpeech      = () => <TmwSection id="content-voice-and-speech"><ContentVoiceAndSpeech /></TmwSection>
+export const SectionCredits             = () => <TmwSection id="content-credits"><ContentCredits /></TmwSection>
 export const SectionVideo               = () => <TmwSection>
                                                     <VideoPlayerNoSSR 
                                                         url="https://vimeo.com/1061218581"

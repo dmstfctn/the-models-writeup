@@ -19,7 +19,8 @@ import {
     SectionTheDirector,
     SectionTheOutputSystem,
     SectionVoiceAndSpeech,
-    SectionVideo
+    SectionVideo,
+    SectionCredits
 } from '@/app/sections.js';
 import { SidebarProvider } from '@/components/SidebarContext.js';
 
@@ -65,7 +66,8 @@ export default function Home() {
                         {/* <SectionAiWeirdness /> */}
                         <SectionTheOutputSystem />
                         <SectionHardwareAndBatching />
-                        <SectionInterfaceAndServer />         
+                        <SectionInterfaceAndServer />       
+                        <SectionCredits />
                     </section>
                     <Sidebar />
                 </SidebarProvider> 

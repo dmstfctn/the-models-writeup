@@ -1,21 +1,24 @@
+import AudioPlayer from '@/components/AudioPlayer.js'
+import Columns from '@/components/Columns.js'
+
 ## Not a bug but a feature
 
 At each stage of the AI generation system there is potential for error or mistakes to emerge in the generation of text or audio, or in the transcription of the audio. These are intentionally left in to allow some of the character of generative AI to come in, alongside the tendencies the project highlights, as well as a source of comedy (of an absurd, machinic, kind).
 
 ### Bark
-
-[ai shouts.wav](attachment:e45b32a8-19c7-43f7-98fb-e01b852e43f2:ai_shouts.wav)
-
-[drunk artist song.wav](attachment:39c3ec27-53c3-47e0-a640-7bbfe02875d8:drunk_artist_song.wav)
-
-[grammelot.wav](attachment:df10cc29-749b-407b-b4e5-b658aa3ecea4:grammelot.wav)
-
-[random sounds.wav](attachment:b9c1dcbf-9fa2-41bd-918e-06d2362b5a53:random_sounds.wav)
+<Columns breakColumns={true}>
+    <AudioPlayer url="ai-weirdness-audio-shouts.mp3" title="AI Shouting" />
+    <AudioPlayer url="ai-weirdness-audio-drunk.mp3" title="Drunk artist Song" />
+</Columns>
+<Columns breakColumns={true}>
+    <AudioPlayer url="ai-weirdness-audio-grammelot.mp3" title="LLM Grammelot" />
+    <AudioPlayer url="ai-weirdness-audio-random.mp3" title="Random Sounds :/" />
+</Columns>
 
 ### Whisper
 
 The transcription introduces errors, particularly of names. For example:
 
-Pulcinella = Mr Punch
-Pulcinella = Paul Cinella
-Colombina = Colin Beaver
+Pulcinella = Mr Punch <br/>
+Pulcinella = Paul Cinella <br/>
+Colombina = Colin Beaver <br/>

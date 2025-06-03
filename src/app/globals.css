@@ -229,10 +229,7 @@
 
 .tmw-body{
   background-color: var(--background);
-  position: relative; 
-  /* padding-top: calc( 3 * var(--spacing) ); */
-  padding-bottom: 33vh;
-  position: relative;
+  position: relative;   
 }
 .tmw-main{  
   max-width: var( --content-width );
@@ -244,16 +241,32 @@
     margin-bottom: calc( 12 * var(--spacing) );
   }
 
-      .tmw-section h2:first-child{
+      .tmw-section h2:first-child,
+      .tmw-section h3:first-child,
+      .tmw-section h4:first-child{
         padding-top: calc( 2 * var(--spacing));
         border-top: 1px solid #000;
         margin-top:0;        
       }
-        .tmw-sidebar .tmw-section h2:first-child{
+        .tmw-sidebar .tmw-section h2:first-child,
+        .tmw-sidebar .tmw-section h3:first-child,
+        .tmw-sidebar .tmw-section h4:first-child{
           padding-top: 0;
           border-top: none;
         }
     
+  #content-credits{
+    margin-top: calc( var(--spacing) * 36) ;
+    color: #888;
+    font-size: 0.8em;
+    margin-bottom: calc( var(--spacing) * 4);
+  }
+    #content-credits h1,
+    #content-credits h4,
+    #content-credits h3,
+    #content-credits h2{
+      border-color: #888;
+    } 
 
   .tmw-sidebar{
     position: fixed;        
@@ -330,16 +343,40 @@
     }
       
     .tmw-media{
-      position: relative;
-      padding-top: 56.25%;
+      position: relative;      
     }
-      .tmw-media > div{
+      .tmw-media__video{
+        padding-top: 56.25%;
+      }
+      .tmw-media__video > div{
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
       }
+      .tmw-media__audio{
+        line-height: 2rem;
+        height: 2rem;
+        white-space: nowrap;
+        margin-bottom: calc( var(--spacing) * 2 );
+      }        
+        .tmw-media__audio button{
+          height: 100%;          
+        }
+        .tmw-media__audio button img,
+        .tmw-media__audio button span{
+          display: inline-block;
+          margin-right: .5rem;
+        }
+          .tmw-media__audio button img{
+            transform: translateY(-0.12em);
+          }
     
+    .tmw-cols > *{
+      width: 50%;
+      flex-shrink: 0;      
+    }
+         
     .tmw-fig{
       margin-bottom: calc( var(--spacing) * 1 );
       cursor: zoom-in;
@@ -375,3 +412,11 @@
           height: 100%;
           object-fit: scale-down;
         }
+
+
+        @media (max-width: 500px){
+        .tmw-cols__breakable{
+          display: block;
+        }
+        
+      }   
