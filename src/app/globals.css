@@ -11,13 +11,15 @@
   --sidebar-tab-width: 3rem;
   --sidebar-width: calc( 100vw - var(--sidebar-tab-width) - 1rem );
   --sidebar-edge: calc( var( --spacing ) * 1 );
+  --sidebar-space: calc( var(--spacing) * 6 );
 }
 @media (min-width: 1024px){
   :root {
     --base-font-size-px: 17px;
-     --sidebar-tab-width: 4rem;
+    --sidebar-tab-width: 4rem;
     --sidebar-edge: (var( --spacing ) * 4 );
     --sidebar-width: calc( 100vw - var(--sidebar-tab-width) - 1rem );
+    --sidebar-space: calc( var(--spacing) * 18 );
   }
 }
 
@@ -283,7 +285,7 @@
     top: 0;    
     background-color: var(--background-sidebar);
     padding: calc( var(--spacing) * 6 );
-    padding-right: calc( var(--spacing) * 18 );    
+    padding-right: var( --sidebar-space );
     /* transform: translateX(100%); */
     transition: opacity .1s .3s linear, right .4s linear, z-index 0s .4s;   
     height: 100%;
@@ -291,6 +293,7 @@
     background-color: var(--background-sidebar);
     color: var(--foreground-sidebar); 
   }
+    
   .tmw-sidebar blockquote{
     border-color: var(--foreground-sidebar);
   }
