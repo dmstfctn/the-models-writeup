@@ -32,11 +32,7 @@ export default function Home() {
 
     return (
         <article>
-            <header className="tmw-header">   
-                 <div className='tmw-title'>
-                    <h1><i>The Models</i> (2025)</h1>
-                    <h2>dmstfctn</h2>
-                </div>
+            <header className="tmw-header">                   
                 <div className='tmw-header-image-wrap'>
                     <Image
                         src="/overview-installation.jpg"
@@ -46,6 +42,10 @@ export default function Home() {
                         priority
                         alt="The Models on a large LED screen in front of an audience."
                     />
+                </div>
+                <div className='tmw-title'>
+                    <h1><i>The Models</i> (2025)</h1>
+                    <h2>dmstfctn</h2>
                 </div>
             </header>
             <div className="tmw-body">        
