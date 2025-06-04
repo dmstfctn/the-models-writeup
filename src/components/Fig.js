@@ -23,6 +23,8 @@ export default function Fig({
             e.stopPropagation();
             setZoom( !zoom );
         }}
+        placeholder='blur'
+        blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIW2M4f/78fwAISwNt2guwTQAAAABJRU5ErkJggg=='
     />
     return <div  
         className='tmw-fig basis-1/2'
