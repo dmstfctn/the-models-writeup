@@ -191,7 +191,7 @@
       position: relative;    
       max-width: var( --content-width );
       margin:  calc(var(--spacing) * 5) auto calc(var(--spacing) * 4);   
-      padding: 0 calc(6 * var(--spacing));
+      padding: 0 calc(3 * var(--spacing));
     }   
         .tmw-title h1,
         .tmw-title h2{
@@ -250,7 +250,7 @@
 }
 .tmw-main{  
   max-width: var( --content-width );
-  padding: 0 calc( 18 * var(--spacing) ) 0 calc( 6 * var(--spacing) );
+  padding: 0 calc( 15 * var(--spacing) ) 0 calc( 3 * var(--spacing) );
   box-sizing: border-box;
   margin: 0 auto;
 } 
@@ -293,7 +293,7 @@
     right: calc( -1 * min( var(--sidebar-width), var(--content-width)) + var(--sidebar-edge) );
     top: 0;    
     background-color: var(--background-sidebar);
-    padding: calc( var(--spacing) * 6 );
+    padding: calc( var(--spacing) * 6 ) calc( var(--spacing) * 6 );
     padding-right: var( --sidebar-space );
     /* transform: translateX(100%); */
     transition: opacity .1s .3s linear, right .4s linear, z-index 0s .4s;   
