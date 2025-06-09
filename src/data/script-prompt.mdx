@@ -8,7 +8,7 @@ The first step in generating a scene is to generate a script. Through <SidebarLi
 
 The first model is the 72 billion parameter, instruction-tuned version of Qwen 2.5 and we run the prompting via Python using the Hugging Face [transformers](https://huggingface.co/docs/transformers/main/en/index) library which allows us to pass both a system prompt and a user prompt.
 
-### **System prompt**
+### System prompt
 
 The system prompt is the foundational set of instructions to the LLM and we use it to set up the role that the LLM will play by providing the characterisation of a script writer:
 
@@ -26,7 +26,7 @@ Do not recapitulate settings at the beginning of your output, and do not write t
 Vary the length of the lines, sometimes a word or two, sometimes a sentence.
 ```
 
-### **Modular User Prompt**
+### Modular User Prompt
 
 The user prompt is constructed from a modular template that takes each element of [the scene](#content-a-scene) (masks, prop, setting) and wraps it in instructional language to trigger the LLM to produce a script-like output rather than something else. It also further adds control to the way these bits of information may return or be used in the script:
 
