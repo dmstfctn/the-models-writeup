@@ -7,7 +7,7 @@ The voice generation was the most [computationally intensive](#content-hardware-
 
 Although we used it for text-to-speech purposes, Bark is a general purpose audio model able to interpret a prompt and synthesise other sounds from it additional to voices, such as music, laughter, hesitation, etc. The model displays a tendency to filler words such as ‘umm’, ‘like’ or ‘uhh’, and also to veer off script adding contextually relevant or <SidebarLink content={<SectionRolePlay/>}>plausible sounding nonsense</SidebarLink>, including screaming. The model’s output felt closest to amateur improvisation, and added a layer of unpredictability and comedy.
 
-### **Speech Bubbles**
+### Speech Bubbles
 
 Due to Bark’s unpredictable behaviour and tendency to add words, the generated audio files were passed through a speech-to-text model to obtain a definitive list of script lines. For this, we used [Faster Whisper Large V2](https://huggingface.co/Systran/faster-whisper-large-v2) which provided time-stamps for each spoken word, allowing us to include speech bubble for each mask’s line as they are spoken, helping audiences interpret the masks’ distorted voices. However, just as Bark can sometimes re-interpret text, whisper can mis-interpret voices. This lead to improvised acting that <SidebarLink content={<SectionAiWeirdness/>}>deviated significantly</SidebarLink> from the original script. 
 
