@@ -485,15 +485,21 @@
 }
   .tmw-contents a{
     text-decoration: none;
+    display: block;
   }
     .tmw-contents a:hover{
       background-color: transparent;
       font-weight: bold;
       color: inherit;
     }
- 
+    .tmw-contents a.hide-on-small{
+      display: none;
+    }
 
   @media (min-width: 54rem){
+    .tmw-contents a.hide-on-small{
+      display: block;
+    }
     .tmw-contents a.current{
       font-weight: bold;
     }

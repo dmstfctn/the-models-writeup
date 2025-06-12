@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useContents } from '@/components/ContentsContext.js';
 
-export default function AnchorLink({children, anchor, text=''}){
+export default function AnchorLink({children, anchor, text='', className}){
     const {contentsState,setContentsState} = useContents();    
     const hash = `#${anchor}`;
     
     return <a 
         href={hash}
-        className={(contentsState.current === anchor) ? 'current' : ''}
+        className={`${className} ${(contentsState.current === anchor) ? 'current' : ''}`}
     >
         {text}
         {children}
