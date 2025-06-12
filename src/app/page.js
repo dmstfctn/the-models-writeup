@@ -20,7 +20,8 @@ import {
     SectionTheOutputSystem,
     SectionVoiceAndSpeech,
     SectionVideo,
-    SectionCredits
+    SectionCredits,
+    SectionContents
 } from '@/app/sections.js';
 import { SidebarProvider } from '@/components/SidebarContext.js';
 
@@ -33,7 +34,7 @@ export default function Home() {
 
     return (
         <article className={`tmw-root${sidebarState.visible ? ' tmw-root__static' : '' }`}>
-            <header className="tmw-header">                   
+            <header className="tmw-header" id="top">                   
                 <div className='tmw-header-image-wrap'>
                     <Image
                         src="/overview-installation.jpg"
@@ -51,9 +52,9 @@ export default function Home() {
             </header>
             <div className="tmw-body">        
                 <SidebarProvider value={{ sidebarState, setSidebarState }}>
-                    <section className="tmw-main">                    
-                                 
+                    <section className="tmw-main">                                            
                         <SectionProjectOverview />
+                        <SectionContents />
                         <SectionVideo />
                         <SectionAiTendencies />
                         {/* <SectionRolePlay /> */}
