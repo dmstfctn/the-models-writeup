@@ -1,20 +1,13 @@
 import { useEffect, useState } from "react";
+import { useContents } from '@/components/ContentsContext.js';
 
 export default function AnchorLink({children, anchor, text=''}){
+    const {contentsState,setContentsState} = useContents();    
     const hash = `#${anchor}`;
-    const [isCurrent, setIsCurrent] = useState(false);
-
-    useEffect(() => {
-        const onHashChange = () => {
-            setIsCurrent( hash === window.location.hash );    
-        }        
-        window.addEventListener('hashchange', onHashChange);
-        return () => window.removeEventListener('hashchange', onHashChange);
-    }, []);
-
+    
     return <a 
         href={hash}
-        className={(isCurrent) ? 'current' : ''}
+        className={(contentsState.current === anchor) ? 'current' : ''}
     >
         {text}
         {children}

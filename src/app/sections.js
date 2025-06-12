@@ -1,6 +1,9 @@
 "use client"
 
 import dynamic from 'next/dynamic'
+import { useInView } from 'react-intersection-observer';
+
+import { useContents } from '@/components/ContentsContext.js';
 
 const VideoPlayerNoSSR = dynamic(() => import('../components/VideoPlayer.js'), {ssr: false});
 
@@ -21,8 +24,22 @@ import ContentVoiceAndSpeech from "@/data/voice-and-speech.mdx"
 import ContentCredits from "@/data/credits.mdx"
 
 export const TmwSection = ({className='', children, id=""}) => {
+    const {contentsState,setContentsState} = useContents();    
+    const { ref, inView } = useInView({
+        threshold: 0.2, // Trigger when 10% of the element is visible
+        triggerOnce: false, // Set to true if you only want the effect once
+        onChange: ( inView ) => {
+            if( inView ){
+                setContentsState( {...contentsState, current: id });                
+                if(history.pushState) {
+                    history.pushState(null, null, `#${id}`);
+                }
+            }
+        }
+    });
+   
     return (
-        <section className={`tmw-section ${className}`} id={id}>
+        <section ref={ref} className={`tmw-section ${className}`} id={id}>
             {children}
         </section>
     )

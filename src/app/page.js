@@ -1,6 +1,8 @@
 "use client"
 
 import { useState  } from 'react';
+import { ContentsProvider } from '@/components/ContentsContext.js';
+import { SidebarProvider } from '@/components/SidebarContext.js';
 import Sidebar from '@/components/Sidebar.js';
 import Image from 'next/image';
 
@@ -23,7 +25,7 @@ import {
     SectionCredits,
     SectionContents
 } from '@/app/sections.js';
-import { SidebarProvider } from '@/components/SidebarContext.js';
+
 
 export default function Home() {
     const [sidebarState, setSidebarState] = useState({
@@ -31,6 +33,10 @@ export default function Home() {
         content: <></>,
         visible: false
     });  
+
+    const [contentsState, setContentsState] = useState({
+        current: ''
+    });
 
     return (
         <article className={`tmw-root${sidebarState.visible ? ' tmw-root__static' : '' }`}>
@@ -50,7 +56,8 @@ export default function Home() {
                     {/* <h2>dmstfctn</h2> */}
                 </div>
             </header>
-            <div className="tmw-body">        
+            <div className="tmw-body">
+                <ContentsProvider value={{contentsState,setContentsState}}>
                 <SidebarProvider value={{ sidebarState, setSidebarState }}>
                     <section className="tmw-main">                                            
                         <SectionProjectOverview />
@@ -72,6 +79,7 @@ export default function Home() {
                     </section>
                     <Sidebar />
                 </SidebarProvider> 
+                </ContentsProvider>
             </div>
         </article>
     );
