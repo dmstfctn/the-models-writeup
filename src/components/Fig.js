@@ -44,10 +44,10 @@ export default function Fig({
                 </video> 
                 : img
             }            
-            {(caption) ?  <figcaption className="text-xs italic">
+            {(caption) ?  <figcaption className="text-sm italic">
                 {caption}
             </figcaption> : ''}
-            {(children) ? <figcaption>
+            {(children) ? <figcaption className='text-sm italic'>
                 {children}
             </figcaption> : ''}
         </figure>

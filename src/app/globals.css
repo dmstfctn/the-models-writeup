@@ -204,6 +204,7 @@
       max-width: var( --content-width );
       margin:  calc(var(--spacing) * 5) auto calc(var(--spacing) * 4);   
       padding: 0 calc(3 * var(--spacing));
+      font-family: f2, cursive;
     }   
         .tmw-title h1,
         .tmw-title h2{
@@ -245,7 +246,7 @@
       bottom: 2rem;
       z-index: 1;
       background-color: var(--background);
-      padding: calc(var(--spacing) * 0.5) calc(var(--spacing) * 1);
+      padding: calc(var(--spacing) * 1) calc(var(--spacing) * 2.5);
       text-align: center;
     }
       .tmw-title h1,
@@ -288,7 +289,7 @@
   #content-credits{
     margin-top: calc( var(--spacing) * 36) ;
     color: #888;
-    font-size: 0.8em;
+    font-size: var(--text-sm);
     margin-bottom: calc( var(--spacing) * 4);
   }
     #content-credits h1,
@@ -449,7 +450,7 @@
     }
          
     .tmw-fig{
-      margin-bottom: calc( var(--spacing) * 1 );
+      margin-bottom: calc( var(--spacing) * 3 );
       cursor: zoom-in;
     }
       h1+.tmw-fig,
@@ -517,7 +518,7 @@
       font-weight: bold;
     }
     .tmw-contents{
-      font-size: 0.8rem;
+      font-size: var(--text-sm);
       position: absolute;
       left: calc( 3 * var(--spacing) );
       top: 0;
