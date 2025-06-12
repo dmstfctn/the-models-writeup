@@ -1,16 +1,25 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'f2';
+  src:  url('/fonts/f2.woff2') format('woff2'),
+        url('/fonts/f2.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;   
+}
+
 :root {
   --background: #fafafa;
   --foreground: #171717;
   --foreground-sidebar: #cacaca;
   --background-sidebar: var(--foreground);
+  --link-sidebar-color: var(--background-sidebar);
   --base-font-size-px: 14px;
   --content-width: 42rem;
   --max-header-image-height: 80vh;
   --header-max-width: 1300px;
-  --sidebar-tab-width: 3rem;
-  --sidebar-tab-width-large: 6.5rem;
+  --sidebar-tab-width: 4rem;
+  --sidebar-tab-width-large: 7.5rem;
   --sidebar-width: calc( 100vw - var(--sidebar-tab-width) - 1rem );
   --sidebar-edge: calc( var( --spacing ) * 1 );
   --sidebar-space: calc( var(--spacing) * 6 );
@@ -306,6 +315,14 @@
     background-color: var(--background-sidebar);
     color: var(--foreground-sidebar); 
   }
+    .tmw-sidebar h1,
+    .tmw-sidebar h2,
+    .tmw-sidebar h3,
+    .tmw-sidebar h4,
+    .tmw-sidebar h5,
+    .tmw-sidebar h6{
+      font-family: f2, cursive;
+    }
     
   .tmw-sidebar blockquote{
     border-color: var(--foreground-sidebar);
@@ -318,11 +335,12 @@
       z-index: 70;
     }
     .tmw-sidebar-link{
-      color: var(--background-sidebar);
+      font-family: f2, cursive;
+      color: var(--link-sidebar-color);
       /* background-color: var(--foreground-sidebar); */
       cursor: w-resize;
       font-weight: bold;
-      font-style: oblique;
+      font-size: 1.03em;      
       /* text-decoration: underline; */          
     }
      
@@ -333,32 +351,8 @@
       .tmw-sidebar .tmw-sidebar-link{
         cursor: n-resize;
       }
-      .tmw-sidebar-link .tmw-sidebar-link--annotation{
-        font-size: 75%;
-        /* vertical-align: super; */
-        display: inline-block;   
-        position: relative;     
-        transform: translateX(0.06em) translateY(0.07em);
-
-      }
-        .tmw-sidebar-link .tmw-sidebar-link--annotation::after{
-          content: '';
-          width: 0;
-          position: absolute;
-          left: 1rem;
-          height: 1px;
-          background-color: var(--background-sidebar);
-          margin-top: 0.7em;
-          z-index: -1;
-          transition: width .5s ease-in-out;
-          display: none;
-        }
-          .tmw-sidebar-link:hover .tmw-sidebar-link--annotation::after{
-            width: 100vw;  
-            background-color: var(--background-sidebar);
-          }
             .tmw-sidebar-link:hover .tmw-sidebar-link--tab{
-              background-color: var(--background-sidebar);
+              background-color: var(--link-sidebar-color);
               color: var(--foreground-sidebar);
               width: calc( var(--sidebar-tab-width) * 1.33 );
             }  
@@ -372,11 +366,11 @@
         position: absolute;
         right: 0;
         width: var(--sidebar-tab-width);
-        background-color: var(--background-sidebar);
+        background-color: var(--link-sidebar-color);
         color: var(--foreground-sidebar);
-        height: 2rem;
-        margin-top: -0.35rem;
-        line-height: 2rem;
+        height: 2.7rem;
+        margin-top: -0.63rem;
+        line-height: 2.7rem;
         padding-left: 0.6rem;
         transition: right .4s linear, width .1s ease-out; 
         z-index: 10;

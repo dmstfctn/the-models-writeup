@@ -58,8 +58,7 @@ export function SidebarLink({
                 });
             }}
         >        
-            {children}           
-            {/* <span className={`tmw-sidebar-link--annotation`}>&nbsp;</span> */}
+            {children}            
             <span className={`tmw-sidebar-link--tab`}>{linkActive ? 'close' : <><span className="hide-on-small">read </span>more</>}</span>
         </span>       
     </>
