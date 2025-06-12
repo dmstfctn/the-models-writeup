@@ -3,13 +3,14 @@
 :root {
   --background: #fafafa;
   --foreground: #171717;
-  --foreground-sidebar: #cfcfcf;
+  --foreground-sidebar: #cacaca;
   --background-sidebar: var(--foreground);
   --base-font-size-px: 14px;
   --content-width: 42rem;
   --max-header-image-height: 80vh;
   --header-max-width: 1300px;
   --sidebar-tab-width: 3rem;
+  --sidebar-tab-width-large: 6.5rem;
   --sidebar-width: calc( 100vw - var(--sidebar-tab-width) - 1rem );
   --sidebar-edge: calc( var( --spacing ) * 1 );
   --sidebar-space: calc( var(--spacing) * 6 );
@@ -317,11 +318,14 @@
       z-index: 70;
     }
     .tmw-sidebar-link{
-      color: var(--background-sidebar);   
+      color: var(--background-sidebar);
+      /* background-color: var(--foreground-sidebar); */
       cursor: w-resize;
       font-weight: bold;
-      text-decoration: underline;
+      font-style: oblique;
+      /* text-decoration: underline; */          
     }
+     
       
       .tmw-sidebar-link__active{
         cursor: e-resize;
@@ -356,14 +360,14 @@
             .tmw-sidebar-link:hover .tmw-sidebar-link--tab{
               background-color: var(--background-sidebar);
               color: var(--foreground-sidebar);
-               width: calc( var(--sidebar-tab-width) * 1.33 );
+              width: calc( var(--sidebar-tab-width) * 1.33 );
             }  
               .tmw-sidebar-link__active:hover .tmw-sidebar-link--tab{
                  width: var(--sidebar-tab-width);
               }    
 
       .tmw-sidebar-link--tab{
-        font-weight: normal;
+        /* font-weight:  */
         font-size: 0.88rem;
         position: absolute;
         right: 0;
@@ -380,6 +384,21 @@
 
         .tmw-sidebar-link__active .tmw-sidebar-link--tab{          
           right: min( var(--sidebar-width), var(--content-width));
+        }
+
+        .tmw-sidebar-link--tab .hide-on-small{
+          display: none;
+        }
+        @media (min-width: 1024px){
+          .tmw-sidebar-link--tab{
+            width: var(--sidebar-tab-width-large);
+          }
+            .tmw-sidebar-link:hover .tmw-sidebar-link--tab{
+              width: calc( var(--sidebar-tab-width-large) * 1.33 );
+            }
+          .tmw-sidebar-link--tab .hide-on-small{
+            display: inline;
+          }
         }
        
     .tmw-sidebar-content{
