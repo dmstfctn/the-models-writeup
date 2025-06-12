@@ -257,7 +257,8 @@
   margin: 0 auto;
 } 
   .tmw-section{    
-    margin-bottom: calc( 12 * var(--spacing) );
+    margin-bottom: calc( 10 * var(--spacing) );
+    padding-top: calc(2 * var(--spacing));
   }
 
       .tmw-section h2:first-child,
