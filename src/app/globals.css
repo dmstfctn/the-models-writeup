@@ -516,9 +516,12 @@
       left: 50%;
       transform: translateX(-50%);
       height: 100%;
+      pointer-events: none;
     }
       .tmw-contents--inner{
+        display: inline-block;
         position: sticky;
+        pointer-events: auto;
         top: calc( 3 * var(--spacing) );
       }
         
