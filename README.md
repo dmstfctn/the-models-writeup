@@ -1,12 +1,11 @@
+## Setup / Install
+```bash
+npm install
+```
+
 ## Dev server
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -21,6 +20,14 @@ Because they are `.mdx` files, they can import and use React components.
 ## Custom Components
 Custom components are found in `src/components` and include:
 
+### AnchorLink
+Allows linking to an `#id` somewhere on the page.
+
+### Sidebar
+Contains additional contextual information (arbitrary HTML / elements) and offers `<SidebarLink>` to toggle this from the content. Makes use of `SidebarContext.js` for global control. 
+
+Don't add sidebar links inside content that will appear in the sidebar or it gets weird.
+
 ### Fig
 Markup for an image, using the Next.js `Image` Component and adding text as figcaption with two styling options.
 
@@ -29,3 +36,13 @@ Simple wrapper that lays out children as columns. It's fairly stupid and just us
 
 ### Video Player
 Wraps `ReactPlayer`, mostly to embed vimeo.
+
+### Audio Player
+Wraps the `<audio>` element to play mp3s.
+
+
+
+### AnchorLink
+
+## Images, audio files
+These are directly in the `public` folder and referenced from the `.mdx` files.
