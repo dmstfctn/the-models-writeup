@@ -17,7 +17,10 @@ The content is in sections, found in `src/data/*.mdx` files. Each of these is im
 
 Because they are `.mdx` files, they can import and use React components.
 
-## Custom Components
+## Images, audio files
+These are directly in the `public` folder and referenced from the `.mdx` files.
+
+## Custom Components
 Custom components are found in `src/components` and include:
 
 ### AnchorLink
@@ -40,9 +43,3 @@ Wraps `ReactPlayer`, mostly to embed vimeo.
 ### Audio Player
 Wraps the `<audio>` element to play mp3s.
 
-
-
-### AnchorLink
-
-## Images, audio files
-These are directly in the `public` folder and referenced from the `.mdx` files.
