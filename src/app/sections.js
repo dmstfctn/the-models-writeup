@@ -64,7 +64,18 @@ export const SectionTheDirector         = () => <TmwSection id="content-the-dire
 export const SectionTheOutputSystem     = () => <TmwSection id="content-the-output-system"><ContentTheOutputSystem /></TmwSection>
 export const SectionVoiceAndSpeech      = () => <TmwSection id="content-voice-and-speech"><ContentVoiceAndSpeech /></TmwSection>
 export const SectionCredits             = () => <TmwSection id="content-credits"><ContentCredits /></TmwSection>
+export const SectionVideoExplainer      = () => <TmwSection id="content-video-explainer">
+                                                    <h2>Artists Introduction</h2>
+                                                    <br></br>
+                                                    <VideoPlayerNoSSR 
+                                                        url="https://vimeo.com/1113552529?share=copy"
+                                                        width={1920}
+                                                        height={1080}
+                                                    />
+                                                </TmwSection>
 export const SectionVideo               = () => <TmwSection id="content-video">
+                                                    <h2>Scenes and Excerpts</h2>
+                                                    <br></br>
                                                     <VideoPlayerNoSSR 
                                                         url="https://vimeo.com/1061218581"
                                                         width={1920}

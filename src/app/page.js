@@ -22,6 +22,7 @@ import {
     SectionTheOutputSystem,
     SectionVoiceAndSpeech,
     SectionVideo,
+    SectionVideoExplainer,
     SectionCredits,
     SectionContents
 } from '@/app/sections.js';
@@ -61,7 +62,8 @@ export default function Home() {
                     <section className="tmw-main">                                            
                         <SectionProjectOverview />
                         <SectionContents />
-                        <SectionVideo />
+                        <SectionVideoExplainer />
+                        <SectionVideo />                        
                         <SectionAiTendencies />
                         {/* <SectionRolePlay /> */}
                         <SectionAScene />
